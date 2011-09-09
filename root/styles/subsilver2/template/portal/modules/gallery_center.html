@@ -1,34 +1,37 @@
 <script type="text/javascript">
-function getElement(iElementId)
+//<![CDATA[
+if (typeof yourFunctionName == 'toggleElement')
 {
-	if (document.all) 
+	function getElement(iElementId)
 	{
-		return document.all[iElementId];
+		if (document.all) 
+		{
+			return document.all[iElementId];
+		}
+		if (document.getElementById)
+		{
+			return document.getElementById(iElementId);
+		}
 	}
-	if (document.getElementById)
-	{
-		return document.getElementById(iElementId);
-	}
-}
 
-function toggleElement(oElement)
-{
-	if (oElement.style.display == "none")
+	function toggleElement(oElement)
 	{
-		oElement.style.display = "";
-	}
-	else
-	{
-		oElement.style.display = "none";
+		if (oElement.style.display == "none")
+		{
+			oElement.style.display = "";
+		}
+		else
+		{
+			oElement.style.display = "none";
+		}
 	}
 }
+//]]>
 </script>
 
 <!-- BEGIN imageblock -->
+{$LR_BLOCK_H_L}<!-- IF $S_BLOCK_ICON --><img src="{T_THEME_PATH}/images/portal/portal_gallery.png" width="16" height="16" alt=""/>&nbsp;<!-- ENDIF --><!-- IF imageblock.U_BLOCK --><a href="{imageblock.U_BLOCK}">{imageblock.BLOCK_NAME}</a><!-- ELSE -->{imageblock.BLOCK_NAME}<!-- ENDIF -->{$LR_BLOCK_H_R}
 <table class="tablebg" cellspacing="1" width="100%">
-	<tr>
-		<th align="center" colspan="{imageblock.S_COLS}" nowrap="nowrap"><!-- IF imageblock.U_BLOCK --><a href="{imageblock.U_BLOCK}">{imageblock.BLOCK_NAME}</a><!-- ELSE -->{imageblock.BLOCK_NAME}<!-- ENDIF --></th>
-	</tr>
 	<!-- BEGIN imagerow -->
 	<tr>
 		<!-- BEGIN image -->

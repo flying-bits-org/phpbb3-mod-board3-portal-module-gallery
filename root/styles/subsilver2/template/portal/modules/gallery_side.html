@@ -1,5 +1,36 @@
+<script type="text/javascript">
+//<![CDATA[
+if (typeof yourFunctionName == 'toggleElement')
+{
+	function getElement(iElementId)
+	{
+		if (document.all) 
+		{
+			return document.all[iElementId];
+		}
+		if (document.getElementById)
+		{
+			return document.getElementById(iElementId);
+		}
+	}
+
+	function toggleElement(oElement)
+	{
+		if (oElement.style.display == "none")
+		{
+			oElement.style.display = "";
+		}
+		else
+		{
+			oElement.style.display = "none";
+		}
+	}
+}
+//]]>
+</script>
+
 <!-- BEGIN small_imageblock -->
-{$LR_BLOCK_H_L}<!-- IF $S_BLOCK_ICON --><img src="{T_THEME_PATH}/images/portal/portal_gallery.png" width="16" height="16" alt=""/>&nbsp;<!-- ENDIF --><!-- IF small_small_imageblock.U_BLOCK --><a href="{small_small_imageblock.U_BLOCK}">{small_small_imageblock.BLOCK_NAME}</a><!-- ELSE -->{small_small_imageblock.BLOCK_NAME}<!-- ENDIF -->{$LR_BLOCK_H_R}
+{$LR_BLOCK_H_L}<!-- IF $S_BLOCK_ICON --><img src="{T_THEME_PATH}/images/portal/portal_gallery.png" width="16" height="16" alt=""/>&nbsp;<!-- ENDIF --><!-- IF small_imageblock.U_BLOCK --><a href="{small_imageblock.U_BLOCK}">{small_imageblock.BLOCK_NAME}</a><!-- ELSE -->{small_imageblock.BLOCK_NAME}<!-- ENDIF -->{$LR_BLOCK_H_R}
 <table class="tablebg" cellspacing="1" width="100%">
 	<tr class="row1">
 		<td>
